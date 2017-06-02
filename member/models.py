@@ -13,3 +13,6 @@ class Member(models.Model):
     phone_number = models.IntegerField()
     photo = models.ImageField()
     is_provisional = models.BooleanField(default=True)
+
+    def __str__(self):
+        return '%s %s' % (self.user.first_name, self.user.last_name)

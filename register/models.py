@@ -20,3 +20,6 @@ class Visit(models.Model):
     timestamp = models.DateTimeField(auto_now=True)
     firearm = models.ForeignKey(Firearm)
     session = models.IntegerField(choices=enumerate(SESSIONS))
+
+    def __str__(self):
+        return '%s on %s in %s' % (self.member, self.timestamp, self.range)
